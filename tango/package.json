@@ -1,0 +1,7 @@
+{
+  "dependencies": {
+    "tangojs": "^0.1.0",
+    "tangojs-connector-local": "^0.1.0",
+    "tangojs-web-components": "/home/michal3/Documents/tango/tangojs-web-components"
+  }
+}

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+
+<html>
+
+  <head>
+    <meta charset="UTF-8">
+
+    <!-- <script src="bower_components/webcomponentsjs/webcomponents.js"></script> -->
+    <script src="bower_components/firefox-HTMLImports-patch/firefox-HTMLImports-patch.js"></script>
+    <script src="bower_components/webcomponentsjs/HTMLImports.js"></script>
+
+    <script src="node_modules/tangojs/lib/tangojs.js"></script>
+    <script src="node_modules/tangojs-connector-local/lib/tangojs-connector-local.js"></script>
+    <script src="node_modules/tangojs-connector-local/lib/tangojs-connector-local-testmodel.js"></script>
+
+    <script src="node_modules/tangojs-web-components/src/tangojs-element.js" type="text/javascript;version=1.7"></script>
+
+    <script type="text/javascript">
+      (function () {
+        var model = tangojsConnectorLocalTestmodel.createModel()
+        var conn = new tangojsConnectorLocal.LocalConnector(model)
+        tangojs.setConnector(conn)
+      })()
+    </script>
+
+    <link rel="import" href="node_modules/tangojs-web-components/src/components/label.html">
+
+  </head>
+
+  <body>
+
+    <tangojs-label
+      model="tangojs/test/1/number_scalar"
+      poll="1000">
+    </tangojs-label>
+
+  </body>
+
+</html>

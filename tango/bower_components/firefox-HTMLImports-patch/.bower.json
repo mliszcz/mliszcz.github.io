@@ -1,0 +1,12 @@
+{
+  "name": "firefox-HTMLImports-patch",
+  "_release": "3b6a2b22f8",
+  "_resolution": {
+    "type": "branch",
+    "branch": "master",
+    "commit": "3b6a2b22f84096197ba41e01cedd1a05c172377c"
+  },
+  "_source": "https://gist.github.com/d11ea630cc777012d69b.git",
+  "_target": "*",
+  "_originalSource": "https://gist.github.com/d11ea630cc777012d69b.git"
+}

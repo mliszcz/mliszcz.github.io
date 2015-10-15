@@ -1,0 +1,9 @@
+{
+  "name": "tangojs-demo-app",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "webcomponentsjs": "^0.7.0",
+    "firefox-HTMLImports-patch": "https://gist.github.com/d11ea630cc777012d69b.git"
+  }
+}

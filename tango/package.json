@@ -1,7 +1,13 @@
 {
+  "scripts": {
+    "server": "http-server"
+  },
   "dependencies": {
     "tangojs": "^0.1.0",
     "tangojs-connector-local": "^0.1.0",
     "tangojs-web-components": "/home/michal3/Documents/tango/tangojs-web-components"
+  },
+  "devDependencies": {
+    "http-server": "^0.8.0"
   }
 }

@@ -1,13 +1,19 @@
 {
+  "name": "tangojs-demo",
+  "version": "0.1.0",
+  "private": true,
+  "author": "mliszcz",
+  "license": "MIT",
   "scripts": {
     "server": "http-server"
   },
   "dependencies": {
-    "tangojs": "^0.1.0",
-    "tangojs-connector-local": "^0.1.0",
-    "tangojs-web-components": "/home/michal3/Documents/tango/tangojs-web-components"
+    "tangojs": "../../tangojs",
+    "tangojs-connector-local": "../../tangojs-connector-local",
+    "tangojs-web-components": "../../tangojs-web-components"
   },
   "devDependencies": {
+    "bower": "^1.6.0",
     "http-server": "^0.8.0"
   }
 }

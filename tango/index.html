@@ -11,13 +11,13 @@
 
     <script src="node_modules/tangojs/lib/tangojs.js"></script>
     <script src="node_modules/tangojs-connector-local/lib/tangojs-connector-local.js"></script>
-    <script src="node_modules/tangojs-connector-local/lib/tangojs-connector-local-testmodel.js"></script>
+    <script src="node_modules/tangojs-connector-local/lib/tangojs-demo-model.js"></script>
 
     <script src="node_modules/tangojs-web-components/src/tangojs-element.js" type="text/javascript"></script>
 
     <script type="text/javascript">
       (function () {
-        var model = tangojsConnectorLocalTestmodel.createModel()
+        var model = demoModel.createModel()
         var conn = new tangojsConnectorLocal.LocalConnector(model)
         tangojs.setConnector(conn)
       })()
@@ -30,7 +30,7 @@
   <body>
 
     <tangojs-label
-      model="tangojs/test/1/number_scalar"
+      model="tangojs/test/dev1/scalar"
       poll="1000">
     </tangojs-label>
 

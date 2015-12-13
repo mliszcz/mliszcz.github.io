@@ -5,15 +5,15 @@
   <head>
     <meta charset="UTF-8">
 
-    <!-- <script src="bower_components/webcomponentsjs/webcomponents.js"></script> -->
     <script src="bower_components/firefox-HTMLImports-patch/firefox-HTMLImports-patch.js"></script>
     <script src="bower_components/webcomponentsjs/HTMLImports.js"></script>
+
+    <script src="bower_components/moment/min/moment.min.js"></script>
+    <script src="bower_components/Chart.js/Chart.js"></script>
 
     <script src="node_modules/tangojs/lib/tangojs.js"></script>
     <script src="node_modules/tangojs-connector-local/lib/tangojs-connector-local.js"></script>
     <script src="node_modules/tangojs-connector-local/lib/tangojs-demo-model.js"></script>
-
-    <script src="node_modules/tangojs-web-components/src/tangojs-element.js" type="text/javascript"></script>
 
     <script type="text/javascript">
       (function () {
@@ -23,16 +23,106 @@
       })()
     </script>
 
-    <link rel="import" href="node_modules/tangojs-web-components/src/components/label.html">
+    <style>
+      form div label {
+        min-width: 250px;
+        display: block;
+        float: left;
+      }
+    </style>
+
+    <link rel="import" href="node_modules/tangojs-web-components/src/components/html-led-element.html">
+    <link rel="import" href="node_modules/tangojs-web-components/src/components/tangojs-label.html">
+    <link rel="import" href="node_modules/tangojs-web-components/src/components/tangojs-line-edit.html">
+    <link rel="import" href="node_modules/tangojs-web-components/src/components/tangojs-command-button.html">
+    <link rel="import" href="node_modules/tangojs-web-components/src/components/tangojs-state-led.html">
+    <link rel="import" href="node_modules/tangojs-web-components/src/components/tangojs-trend.html">
 
   </head>
 
   <body>
 
-    <tangojs-label
-      model="tangojs/test/dev1/scalar"
-      poll="1000">
-    </tangojs-label>
+    <form>
+
+      <div>
+        <label>tangojs-label</label>
+        <tangojs-label
+          model="tangojs/test/dev1/sine_trend"
+          poll-period="500"
+          show-name
+          show-unit
+          show-quality>
+        </tangojs-label>
+      </div>
+
+      <div>
+        <label>tangojs-line-edit</label>
+        <tangojs-line-edit
+          model="tangojs/test/dev1/scalar"
+          poll-period="1000"
+          show-name
+          show-unit
+          show-quality>
+        </tangojs-line-edit>
+      </div>
+
+      <div>
+        <label>tangojs-command-button</label>
+        <tangojs-command-button
+          model="tangojs/test/dev1/double_arg"
+          parameters="2">
+          Double Me!
+        </tangojs-command-button>
+      </div>
+
+      <div>
+        <label>x-led</label>
+        <x-led color="#FFFF00" on></x-led>
+      </div>
+
+      <div>
+        <label>tangojs-state-led</label>
+        <tangojs-state-led
+          model="tangojs/test/dev1"
+          poll-period="1000"
+          show-name
+          show-led>
+        </tangojs-state-led>
+      </div>
+
+      <div>
+        <label>tangojs-command-button</label>
+        <tangojs-command-button model="tangojs/test/dev1/goto_on">
+          state: ON
+        </tangojs-command-button>
+        <tangojs-command-button model="tangojs/test/dev1/goto_off">
+          state: OFF
+        </tangojs-command-button>
+        <tangojs-command-button model="tangojs/test/dev1/goto_fault">
+          state: FAULT
+        </tangojs-command-button>
+        <tangojs-command-button model="tangojs/test/dev1/goto_alarm">
+          state: ALARM
+        </tangojs-command-button>
+      </div>
+
+      <div>
+        <label>tangojs-trend</label>
+        <tangojs-trend
+          model='["tangojs/test/dev1/sine_trend", "tangojs/test/dev1/scalar"]'
+          poll-period="1000"
+          data-limit="15">
+        </tangojs-trend>
+      </div>
+
+    </form>
+
+    <script type="text/javascript">
+      document.querySelector('tangojs-command-button').onresult =
+        function commandButtonHandleResult (value) {
+          alert(`command: (${this.model})@(${this.parameters}) = ${value}`)
+        }
+    </script>
 
   </body>
 
